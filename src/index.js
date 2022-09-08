@@ -1,12 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React, { StrictMode } from "react";
+import ReactDOM from "react-dom";
 
+// playlist
+// https://www.youtube.com/watch?v=tHjxSVaj_wY&t=5s
 
+import App from "./App";
+
+const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </StrictMode>,
+  rootElement
 );
-

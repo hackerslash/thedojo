@@ -1,25 +1,22 @@
-import { Link } from "react-router-dom";
+const BlogList = ({ blogs, title, handleDelete }) => {
+  // const blogs = props.blogs;
+  // const title = props.title;
 
-const BlogList = ({blogs,title }) =>{
+  // console.log(props, blogs);
 
-    // const blogs = props.blogs;
-    // const title = props.title;
-
-    return (
-        <div className="blog-list">
-            <h2>{title}</h2>
-            {blogs.map(blog=>(
-            <div className="blog-preview" key={blog.id}>
-                <Link to={`blogs/${blog.id}`}>
-                    <h2>{blog.title}</h2>
-                    <p>{blog.author}</p>
-                </Link>
-            </div>
-            ))}
+  return (
+    <div className="blog-list">
+      <br />
+      <h3>{title}</h3>
+      {blogs.map((blogpost) => (
+        <div className="blogpost-preview" key={blogpost.id}>
+          <h2>{blogpost.title}</h2>
+          <p>Written by {blogpost.author}</p>
+          <button onClick={() => handleDelete(blogpost.id)}>Delete post</button>
         </div>
-    )
-}
+      ))}
+    </div>
+  );
+};
 
 export default BlogList;
-
-// blog component, just paused until this month

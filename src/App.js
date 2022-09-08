@@ -1,37 +1,23 @@
-import './App.css';
-import Navbar from './Navbar';
-import Home from './Home';
-import {BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Create from './Create';
-import BlogDetails from './BlogDetails';
-import NotFound from './NotFound';
+// import React from "react";
+import "./styles.css";
+import Navbar from "./Navbar";
+import Home from "./Home";
 
+export default function App() {
+  const title = "Welcome to the new blog";
 
-const App = () =>{
+  const person = { name: "Yoshi", age: 30 };
+
   return (
-    <Router>
-    <div className='App'>
+    <div className="App">
       <Navbar />
-      <div className='content'>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/create">
-            <Create />
-          </Route>
-          <Route path="/blogs/:id">
-            <BlogDetails />
-          </Route>
-          <Route path="*">
-            <NotFound />
-          </Route>
-        </Switch>
+      <div className="content">
+        <Home />
+        <p>
+          {person.name}, {title}
+        </p>
+        <p> {Math.random() * 10} </p>
       </div>
     </div>
-    </Router>
-  )
+  );
 }
-
-export default App;
-// I'm back
